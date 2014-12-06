@@ -1,0 +1,16 @@
+<h2>Blogposts</h2>
+
+<button class="btn btn-general" ui-sref="admin.posts.new">Neuer Blogpost</button>
+
+<div ng-repeat="blogpost in ctrl.blogposts" class="blog-item">
+	<div class="blogpost-title">
+	    <div>{{blogpost.id}}: {{blogpost.title}}</div>
+	    <div class="blogpost-date smaller" class="smaller">{{blogpost.date}}</div>
+	    <div class="blogpost-slug smaller">{{blogpost.slug}}</div>
+	</div>
+	<div class="blogpost-actions">
+		<button class="btn" ui-sref="admin.posts.edit({blogID: {{blogpost.id}} })">Editieren</button>
+		<button class="btn btn-red" ng-click="ctrl.removePost(blogpost)">Löschen</button>
+	</div>
+	<div class="clearfix"></div>
+</div>

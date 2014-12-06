@@ -114,6 +114,112 @@ a:hover {
 	min-height: 2em;
 	font-size: 0.8em;
 	margin: 0.5em 0em 0.5em 0em;
+	border: 1px solid #bbb;
+}
+
+.btn-red {
+	background-color: #ff6677;
+	border-color: #800000;
+}
+
+.btn-general {
+	width: 100%;
+	margin-bottom: 2em;
+}
+
+#admin-nav {
+	float: left;
+	margin-bottom: 2em;
+	color: #000;
+	width: 20vw;
+	text-align: center;
+}
+
+#admin-nav a {
+	color: inherit;
+}
+
+.nav-item {
+	padding-top: 1em;
+	padding-bottom: 1em;
+	border-bottom: 1px solid grey;
+	cursor: pointer;
+}
+
+.nav-item:hover {
+	background-color: #0A86BC;
+	color: #fff;
+}
+
+.nav-item:last-child {
+	border: none;
+}
+
+.nested-container {
+	float: right;
+	width: 70vw;
+	margin-top: 1em;
+}
+
+.input-group {
+	margin-top: 0.4em;
+	margin-bottom: 0.2em;
+}
+
+.input-group label {
+	display: -moz-inline-box;
+	min-width: 10vw;
+}
+
+.input-group input {
+	min-width: 40vw;
+}
+
+.btn-form {
+	width: 51vw;
+}
+
+.big-textarea {
+	width: 100%;
+	min-height: 40vh;
+	margin-top: 1em;
+}
+
+.blog-item {
+	border-bottom: 1px solid grey;
+	padding-bottom: 1em;
+	padding-top: 1em;
+}
+
+.blog-item:last-child {
+	border-bottom: none;
+}
+
+.blogpost-title {
+	width: 30%;
+	margin-right: 20%;
+	float: left;
+}
+
+.blogpost-actions {
+	width: 50%;
+	float: right;
+}
+
+.blogpost-date {
+	margin-top: 0.5em;
+}
+
+.blogpost-slug {
+	margin-top: 0.5em;
+}
+
+.clearfix {
+	clear: both;
+}
+
+.smaller {
+	font-size: 0.8em;
 }
 
 @media all and (max-width: 700px) {

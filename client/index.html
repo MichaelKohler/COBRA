@@ -1,16 +1,11 @@
 <!DOCTYPE html>
-<html>
+<html ng-app="app" ng-controller="AppCtrl as appctrl">
     <head>
         <meta charset="utf-8">
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
-        <title>COBRA</title>
+        <title>{{appctrl.title}}</title>
         <meta name="description" content="">
         <meta name="viewport" content="width=device-width, initial-scale=1">
-
-        <!--
-            Fonts
-        -->
-       <link href="//maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css" rel="stylesheet">
 
         <!-- build:css styles/vendor.min.css -->
         <link rel="stylesheet" href="lib/normalize.css" />
@@ -31,24 +26,13 @@
         <script src="lib/modernizr.js"></script>
         <!-- endbuild -->
     </head>
-    <body ng-app="app" ng-controller="AppCtrl as appctrl">
+    <body>
 
         <div id="title">
             <h1><i class="fa fa-quote-left"></i> {{appctrl.name}} <i class="fa fa-quote-right"></i></h1>
             <h3>{{appctrl.title}}</h3>
         </div>
         <div id="container">
-
-            <div id="kontakt">
-              <img ng-src="{{appctrl.picture}}" alt="Foto" />
-              <h2>{{appctrl.person}}</h2>
-              <ul id="kontaktliste">
-                <li><a href="http://www.facebook.com" target="_blank"><button class="btn fb"><i class="fa fa-facebook-square"></i> Facebook</button></a></li>
-                <li><a href="http://www.twitter.com" target="_blank"><button class="btn"><i class="fa fa-twitter"></i> Twitter</button></a></li>
-                <li><a href="http://www.xing.com" target="_blank"><button class="btn"><i class="fa fa-xing"></i> Xing</button></a></li>
-                <li><a href="mailto:foo@bar.com"><button class="btn"><i class="fa fa-envelope-o"></i> eMail</button></a></li>
-              </ul>
-            </div>
 
             <div ui-view class="main"></div>
 
@@ -75,6 +59,14 @@
         <script src="scripts/app.js"></script>
         <script src="scripts/routes/app.controller.js"></script>
         <script src="scripts/routes/home/home.controller.js"></script>
+        <script src="scripts/routes/admin/admin.controller.js"></script>
+        <script src="scripts/routes/admin/blog/blog.controller.js"></script>
+        <script src="scripts/routes/admin/blog/blog.new.controller.js"></script>
+        <script src="scripts/routes/admin/blog/blog.edit.controller.js"></script>
+        <script src="scripts/routes/admin/content/content.controller.js"></script>
+        <script src="scripts/routes/admin/contact/contact.controller.js"></script>
+        <script src="scripts/routes/admin/gallery/gallery.controller.js"></script>
+        <script src="scripts/routes/admin/general/general.controller.js"></script>
         <!-- endbuild -->
 
     </body>
