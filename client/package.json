@@ -1,0 +1,15 @@
+{
+  "name": "cobra-client",
+  "version": "0.1.0",
+  "homepage": "",
+  "description": "",
+  "authors": [
+    "Michael Kohler <mkohler@picobudget.com>"
+  ],
+  "devDependencies": {
+    "gulp": "^3.8.8",
+    "gulp-jslint": "0.1.*",
+    "gulp-serve": "0.3.*",
+    "browser-sync": "1.7.*"
+  }
+}
