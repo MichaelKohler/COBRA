@@ -12,6 +12,10 @@
     }));
   };
 
+  exports.session = function session(req, res) {
+    res.send(JSON.stringify(req.session.user));
+  };
+
   exports.logout = function logout(req, res) {
     delete req.session.user;
     res.send(JSON.stringify({

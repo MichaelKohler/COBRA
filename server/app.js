@@ -18,18 +18,28 @@
     console.log('Server for ' + infos.config.mandant.name + ' started on Port ' + server.address().port);
   });
 
-  function requiresLogin(req, res, next) {
+  var requiresLogin = function(req, res, next) {
     if (req.session.user) {
       next();
     } else {
-      res.status(403);
+      res.status(401);
       res.send('NOPE!');
     }
   }
 
+  var allowCrossDomain = function(req, res, next) {
+    res.header('Access-Control-Allow-Origin', 'http://localhost:3000');
+    res.header('Access-Control-Allow-Methods', 'GET,PUT,POST,DELETE');
+    res.header('Access-Control-Allow-Headers', 'Origin, X-Requested-With, Content-Type, Accept"');
+    next();
+  }
+
+  app.use(allowCrossDomain);
+
   /** ROUTES **/
   var user = require('./controllers/user');
   app.post('/login', user.login);
+  app.post('/session', user.session);
   app.post('/logout', user.logout);
 
   var config = require('./controllers/config');

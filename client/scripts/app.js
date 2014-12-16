@@ -21,6 +21,12 @@ angular
     controller: 'AdminCtrl',
     controllerAs: 'ctrl'
   })
+  .state('login', {
+    url: '/login',
+    templateUrl: 'scripts/routes/login/login.tpl.html',
+    controller: 'LoginCtrl',
+    controllerAs: 'ctrl'
+  })
   .state('admin.general', {
     url: '/general',
     templateUrl: 'scripts/routes/admin/general/general.tpl.html',

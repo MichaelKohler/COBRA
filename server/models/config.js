@@ -4,6 +4,7 @@
   exports.Config = Config;
 
   var Config = function (configObj) {
+    this.id = configObj.id || 1;
   	this.title = configObj.title || 'Empty project';
   	this.name = configObj.name || 'Empty project';
   	this.url = configObj.url || 'example.com';
@@ -12,6 +13,7 @@
   	this.logo = configObj.logo || '';
   };
 
+  Config.prototype.id = "";
   Config.prototype.title = '';
   Config.prototype.name = '';
   Config.prototype.url = '';
