@@ -1,7 +1,7 @@
 'use strict';
 var gulp = require('gulp');
 var jslint = require('gulp-jslint');
-var browserSync = require('browser-sync');
+var connect = require('gulp-connect');
 
 var paths = {
   libs: 'lib/**/*.js',
@@ -33,10 +33,8 @@ gulp.task('watch', function() {
 });
 
 gulp.task('serve', function() {
-    browserSync({
-        server: {
-            baseDir: "."
-        }
+    connect.server({
+        livereload: true
     });
 });
 
