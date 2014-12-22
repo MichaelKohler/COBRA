@@ -6,9 +6,9 @@
         .module('app')
         .factory('AuthService', AuthService);
 
-    AuthService.$inject = ['$http', 'config', '$q'];
+    AuthService.$inject = ['$http', 'config', '$q', 'RequestHelper'];
 
-    function AuthService($http, config, $q) {
+    function AuthService($http, config, $q, RequestHelper) {
 
         var service = {
             loginUrl: '/login',
@@ -41,10 +41,12 @@
             $http({
                 method: 'POST',
                 url: config.apiUrl + service.loginUrl,
+                transformRequest: RequestHelper.transformRequest,
                 data: {
-                    'username': loginObj.username,
-                    'password': loginObj.password
-                }
+                    username: loginObj.username,
+                    password: loginObj.password
+                },
+                headers: { 'Content-Type': 'application/x-www-form-urlencoded' }
             }).success(function(data) {
                 q.resolve(data);
             }).error(function(data, status) {

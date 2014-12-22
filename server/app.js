@@ -5,7 +5,18 @@
       bodyParser = require('body-parser'),
       session = require('express-session'),
       infos = require('./configuration'),
-      app = express();
+      app = express(),
+      mongo = require('mongodb'),
+      dbServer = new mongo.Server('localhost', 27017, { auto_reconnect: true, poolSize: 1 }),
+      db = new mongo.Db('cobra', dbServer, { safe: true });
+
+  db.open(function (err, db) {
+    if (err) {
+      console.log(err);
+    } else {
+      console.log('Connected to DB on port 27017.');
+    }
+  });
 
   app.use(bodyParser.urlencoded({ extended: false }));
   app.use(session({
@@ -14,8 +25,9 @@
     saveUninitialized: true
   }));
 
-  var server = app.listen(infos.config.server.port, function () {
-    console.log('Server for ' + infos.config.mandant.name + ' started on Port ' + server.address().port);
+  app.use(function(req, res, next) {
+    req.db = db;
+    next();
   });
 
   var requiresLogin = function(req, res, next) {
@@ -25,7 +37,7 @@
       res.status(401);
       res.send('NOPE!');
     }
-  }
+  };
 
   var allowCrossDomain = function(req, res, next) {
     res.header('Access-Control-Allow-Origin', '*');
@@ -34,7 +46,7 @@
     res.header('Access-Control-Allow-Credentials', true);
     res.header('Access-Control-Max-Age', 1728000);
     next();
-  }
+  };
 
   app.use(allowCrossDomain);
 
@@ -62,4 +74,9 @@
   app.post('/blogpost/create', requiresLogin, blog.createBlogpost);
   app.post('/blogpost/:blogID/update', requiresLogin, blog.updateBlogpostById);
   app.delete('/blogpost/:blogID/delete', requiresLogin, blog.deleteBlogpostById);
+
+
+  var server = app.listen(infos.config.server.port, function () {
+    console.log('Server for ' + infos.config.mandant.name + ' started on Port ' + server.address().port);
+  });
 }());

@@ -2,14 +2,21 @@
   'use strict';
 
   exports.login = function login(req, res) {
-  	var user = '';
+  	var username = req.body.username;
+    var password = req.body.password;
   	var success = false;
-    req.session.user = user;
-
-    res.send(JSON.stringify({
-    	title: 'Login',
-    	success: success
-    }));
+    req.db.collection('users', function (error, collection) {
+      collection.find({ username: username }).toArray(function (error, user) {
+        if (!error && user[0] && user[0].password == password) {
+          success = true;
+          req.session.user = user[0];
+        }
+        res.send(JSON.stringify({
+          title: 'Login',
+          success: success
+        }));
+      });
+    });
   };
 
   exports.session = function session(req, res) {

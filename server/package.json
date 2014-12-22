@@ -9,6 +9,6 @@
     "express-session"     :  "1.9.*",
     "gulp"                :  "3.8.*",
     "gulp-jslint"         :  "0.1.*",
-    "nedb"                :  "1.0.*"
+    "mongodb"             :  "1.4.*"
   }
 }
