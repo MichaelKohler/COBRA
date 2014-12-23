@@ -6,17 +6,14 @@
         .module('app')
         .controller('AdminCtrl', AdminCtrl);
 
-    AdminCtrl.$inject = ['AuthService'];
+    AdminCtrl.$inject = ['AuthService', '$location'];
 
-    function AdminCtrl(AuthService) {
+    function AdminCtrl(AuthService, $location) {
         var ctrl = this;
 
         AuthService.userHasSession().then(function (response) {
-            if (!response && response != {}) {
-                console.log('logged in..');
-            }
-            else {
-                console.log('not logged in..');
+            if (response == undefined || response == "") {
+                $location.path('/login');
             }
         });
         

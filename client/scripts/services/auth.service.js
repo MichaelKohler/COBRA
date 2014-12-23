@@ -26,9 +26,9 @@
                 method: 'POST',
                 url: config.apiUrl + service.sessionUrl
             }).success(function(data) {
-                q.resolve();
+                q.resolve(data);
             }).error(function(data, status) {
-                q.reject();
+                q.reject(data);
             });
 
             return q.promise;
@@ -47,6 +47,7 @@
                 },
                 headers: { 'Content-Type': 'application/x-www-form-urlencoded' }
             }).success(function(data) {
+                console.log(data);
                 q.resolve(data);
             }).error(function(data, status) {
                 q.reject(data, status);
