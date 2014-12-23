@@ -22,7 +22,8 @@
   app.use(session({
     secret: 'keyboard cat',
     resave: false,
-    saveUninitialized: true
+    saveUninitialized: true,
+    cookie: { maxAge: 3600000 }
   }));
 
   app.use(function(req, res, next) {
@@ -54,7 +55,7 @@
   var user = require('./controllers/user');
   app.post('/login', user.login);
   app.post('/session', user.session);
-  app.post('/logout', user.logout);
+  app.get('/logout', user.logout);
 
   var config = require('./controllers/config');
   app.get('/config', requiresLogin, config.getConfig);

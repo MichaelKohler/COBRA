@@ -24,8 +24,7 @@
 
             $http({
                 method: 'POST',
-                url: config.apiUrl + service.sessionUrl,
-                withCredentials: true
+                url: config.apiUrl + service.sessionUrl
             }).success(function(data) {
                 q.resolve();
             }).error(function(data, status) {

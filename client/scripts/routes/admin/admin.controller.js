@@ -12,7 +12,7 @@
         var ctrl = this;
 
         AuthService.userHasSession().then(function (response) {
-            if (response != {}) {
+            if (!response && response != {}) {
                 console.log('logged in..');
             }
             else {
