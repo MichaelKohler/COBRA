@@ -1,9 +1,10 @@
 (function () {
   'use strict';
+  var sha256 = require('js-sha256').sha256;
 
   exports.login = function login(req, res) {
   	var username = req.body.username;
-    var password = req.body.password;
+    var password = sha256(req.body.password);
   	var success = false;
     req.db.collection('users', function (error, collection) {
       collection.find({ username: username }).toArray(function (error, user) {

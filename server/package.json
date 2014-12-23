@@ -9,6 +9,7 @@
     "express-session"     :  "1.9.*",
     "gulp"                :  "3.8.*",
     "gulp-jslint"         :  "0.1.*",
-    "mongodb"             :  "1.4.*"
+    "mongodb"             :  "1.4.*",
+    "js-sha256"           :  "0.1.*"
   }
 }
