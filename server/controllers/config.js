@@ -1,14 +1,19 @@
 (function () {
   'use strict';
-  var Config = require('../models/config');
+  var Config = require('../models/config').Config;
 
   exports.getConfig = function getConfig(req, res) {
-    req.db.find({ id: 1 }, function (error, config) {
-      if (error) {
-        res.send(JSON.stringify(error));
-      } else {
-    	  res.send(JSON.stringify(config));
-      }
+    req.db.collection('config', function (error, collection) {
+      var coll = collection;
+      collection.find({ id: 1 }).toArray(function (error, config) {
+        if (error) {
+          res.status(500);
+          res.send(JSON.stringify(error));
+        } else {
+          res.status(200);
+          res.send(JSON.stringify(config[0]));
+        }
+      });
     });
   };
 
@@ -21,8 +26,17 @@
       linkColor: req.body.linkColor,
       logo: req.body.logo
     });
-    req.db.update({ id: 1}, newConfig, {}, function (err, replacedBy) {
-      res.send(JSON.parse(replacedBy));
+    req.db.collection('config', function (error, collection) {
+      collection.update({ id: 1 }, newConfig, { upsert: true }, function (err, status) {
+        if (error || err) {
+          res.status(500);
+          res.send(error);
+        }
+        else {
+          res.status(200);
+          res.send(JSON.stringify(newConfig));
+        }
+      });
     });
   }
 }());

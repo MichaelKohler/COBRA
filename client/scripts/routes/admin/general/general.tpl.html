@@ -1,33 +1,36 @@
 <h2>Allgemein</h2>
 
+<div class="error-message" ng-show="ctrl.showErrorMessage"><span>{{ctrl.errorMessage}}</span></div>
+<div class="success-message" ng-show="ctrl.showSuccessMessage"><span>{{ctrl.successMessage}}</span></div>
+
 <div class="input-group">
 	<label for="title">Titel:</label>
-	<input name="title" type="text" />
+	<input name="title" type="text" ng-model="ctrl.model.title" />
 </div>
 
 <div class="input-group">
 	<label for="name">Name:</label>
-	<input name="name" type="text" />
+	<input name="name" type="text" ng-model="ctrl.model.name" />
 </div>
 
 <div class="input-group">
 	<label for="url">URL:</label>
-	<input name="url" type="text" />
+	<input name="url" type="text" ng-model="ctrl.model.url" />
 </div>
 
 <div class="input-group">
 	<label for="color">Farbe:</label>
-	<input name="color" type="text" />
+	<input name="color" type="text" ng-model="ctrl.model.color" />
 </div>
 
 <div class="input-group">
 	<label for="linkcolor">Linkfarbe:</label>
-	<input name="linkcolor" type="text" />
+	<input name="linkcolor" type="text" ng-model="ctrl.model.linkColor" />
 </div>
 
 <div class="input-group">
 	<label for="logo">Logo:</label>
-	<input name="logo" type="text" />
+	<input name="logo" type="text" ng-model="ctrl.model.logo" />
 </div>
 
-<button class="btn btn-form">SPEICHERN</button>
+<button class="btn btn-form" ng-click="ctrl.saveConfig(ctrl.model)">SPEICHERN</button>
