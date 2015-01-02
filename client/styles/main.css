@@ -16,16 +16,10 @@ h2:first-child {
 h2 {
 	margin-top: 1em;
 	margin-bottom: 0.6em;
-	color: #0A86BC;
 }
 
 a {
 	text-decoration: none;
-	color: #0A86BC;
-}
-
-a:hover {
-	color: #0A86FF;
 }
 
 #container {
@@ -69,7 +63,6 @@ a:hover {
 	text-align: center;
 	padding-top: 1em;
 	padding-bottom: 1em;
-	background-color: #0A86BC;
 	color: #fff;
 }
 
@@ -88,7 +81,6 @@ a:hover {
 	clear: both;
 	text-align: center;
 	width: 100%;
-	background-color: #0A86BC;
 	color: #fff;
 }
 
@@ -147,7 +139,6 @@ a:hover {
 }
 
 .nav-item:hover {
-	background-color: #0A86BC;
 	color: #fff;
 }
 

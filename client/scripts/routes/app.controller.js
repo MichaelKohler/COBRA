@@ -15,6 +15,8 @@
             appctrl.name = data.name;
             appctrl.url = data.url;
             appctrl.logo = data.logo;
+            appctrl.color = data.color;
+            appctrl.linkColor = data.linkColor;
         });
     }   
 })();
