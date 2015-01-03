@@ -1,20 +1,16 @@
 (function () {
-
     'use strict';
 
     angular
         .module('app')
         .controller('HomeCtrl', HomeCtrl);
 
-    HomeCtrl.$inject = [];
+    HomeCtrl.$inject = ['ContactsService'];
 
-    function HomeCtrl() {
+    function HomeCtrl(ContactsService) {
         var ctrl = this;
-
-        var test = "Foo Bar Baz";
-        
-        angular.extend(ctrl, {
-            test: test
+        ContactsService.getContacts().then(function (data) {
+            ctrl.contacts = data;
         });
     }   
 })();
