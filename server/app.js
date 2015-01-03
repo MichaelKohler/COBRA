@@ -58,20 +58,20 @@
   app.get('/logout', user.logout);
 
   var config = require('./controllers/config');
-  app.get('/config', requiresLogin, config.getConfig);
+  app.get('/config', config.getConfig);
   app.post('/config/update', requiresLogin, config.updateConfig);
 
   var contact = require('./controllers/contact');
-  app.get('/contact', requiresLogin, contact.getContact);
+  app.get('/contact', contact.getContact);
   app.post('/contact/update', requiresLogin, contact.updateContact);
 
   var content = require('./controllers/content');
-  app.get('/content', requiresLogin, content.getContent);
+  app.get('/content', content.getContent);
   app.post('/content/update', requiresLogin, content.updateContent);
 
   var blog = require('./controllers/blog');
-  app.get('/blogposts', requiresLogin, blog.getAllBlogposts);
-  app.get('/blogpost/:blogID', requiresLogin, blog.getBlogpostById);
+  app.get('/blogposts', blog.getAllBlogposts);
+  app.get('/blogpost/:blogID', blog.getBlogpostById);
   app.post('/blogpost/create', requiresLogin, blog.createBlogpost);
   app.post('/blogpost/:blogID/update', requiresLogin, blog.updateBlogpostById);
   app.delete('/blogpost/:blogID/delete', requiresLogin, blog.deleteBlogpostById);
