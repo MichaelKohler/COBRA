@@ -13,8 +13,8 @@ h2:first-child {
 	margin-top: 0em;
 }
 
-h2 {
-	margin-top: 1em;
+h1, h2 {
+	margin-top: 0.2em;
 	margin-bottom: 0.6em;
 }
 
@@ -61,6 +61,7 @@ a {
 	padding-top: 1em;
 	padding-left: 2%;
 	margin-bottom: 2em;
+	white-space: pre-wrap;
 }
 
 #title {

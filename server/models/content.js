@@ -1,11 +1,9 @@
 (function () {
   'use strict';
 
-  exports.Content = Content;
-
-  var Content = function (contentObj) {
+  exports.Content = function (contentObj) {
+    this.id = contentObj.id || 1;
   	this.content = contentObj.content || '';
   };
 
-  Content.prototype.content = '';
 }());

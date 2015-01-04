@@ -1,6 +1,6 @@
 angular
   .module('app', [
-  'ui.router'
+  'ui.router', 'markdown'
 ])
 
 .constant('config', {

@@ -5,12 +5,15 @@
         .module('app')
         .controller('HomeCtrl', HomeCtrl);
 
-    HomeCtrl.$inject = ['ContactsService'];
+    HomeCtrl.$inject = ['ContactsService', 'ContentService'];
 
-    function HomeCtrl(ContactsService) {
+    function HomeCtrl(ContactsService, ContentService) {
         var ctrl = this;
         ContactsService.getContacts().then(function (data) {
             ctrl.contacts = data;
+        });
+        ContentService.getContent().then(function (data) {
+            ctrl.content = data.content;
         });
     }   
 })();
