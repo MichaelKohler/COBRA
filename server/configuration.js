@@ -3,11 +3,13 @@
 
   var config = {
     mandant: {
-    	name: "einfachundklar.ch"
+    	name: "localhost",
+        port: 8080
     },
 
     server: {
-    	port: 3001
+    	port: 3001,
+        dbname: 'cobra'
     }
   }
 

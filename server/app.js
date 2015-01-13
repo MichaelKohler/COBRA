@@ -8,7 +8,7 @@
       app = express(),
       mongo = require('mongodb'),
       dbServer = new mongo.Server('localhost', 27017, { auto_reconnect: true, poolSize: 1 }),
-      db = new mongo.Db('cobra', dbServer, { safe: true });
+      db = new mongo.Db(infos.config.server.dbname, dbServer, { safe: true });
 
   db.open(function (err, db) {
     if (err) {
@@ -41,7 +41,7 @@
   };
 
   var allowCrossDomain = function(req, res, next) {
-    res.header('Access-Control-Allow-Origin', 'http://localhost:8080');
+    res.header('Access-Control-Allow-Origin', 'http://' + infos.config.mandant.name + ':' + infos.config.mandant.port);
     res.header('Access-Control-Allow-Methods', 'GET, PUT, POST, DELETE, OPTIONS');
     res.header('Access-Control-Allow-Headers', 'Origin, X-Requested-With, Content-Type, Accept');
     res.header('Access-Control-Allow-Credentials', true);
