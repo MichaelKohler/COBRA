@@ -11,6 +11,7 @@
         var ctrl = this;
         ContactsService.getContacts().then(function (data) {
             ctrl.contacts = data;
+            console.log(data);
         });
         ContentService.getContent().then(function (data) {
             ctrl.content = data.content;

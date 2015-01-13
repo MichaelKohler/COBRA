@@ -1,6 +1,6 @@
 <div id="kontakt">
   <img ng-src="{{appctrl.picture}}" alt="Foto" />
-  <h2>{{appctrl.person}}</h2>
+  <h2>{{ctrl.contacts.name}}</h2><p>{{ctrl.contacts.address}}<br />{{ctrl.contacts.place}}<br />{{ctrl.contacts.phone}}</p>
   <ul id="kontaktliste">
     <li ng-show="ctrl.contacts.facebook != ''"><a href="http://facebook.com/{{ctrl.contacts.facebook}}" target="_blank"><button class="btn fb"><i class="fa fa-facebook-square"></i> Facebook</button></a></li>
     <li ng-show="ctrl.contacts.twitter != ''"><a href="http://twitter.com/{{ctrl.contacts.twitter}}" target="_blank"><button class="btn"><i class="fa fa-twitter"></i> Twitter</button></a></li>

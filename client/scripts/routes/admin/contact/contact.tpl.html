@@ -4,6 +4,26 @@
 <div class="success-message" ng-show="ctrl.showSuccessMessage"><span>{{ctrl.successMessage}}</span></div>
 
 <div class="input-group">
+	<label for="name">Name:</label>
+	<input name="name" type="text" ng-model="ctrl.model.name" />
+</div>
+
+<div class="input-group">
+	<label for="address">Adresse:</label>
+	<input name="address" type="text" ng-model="ctrl.model.address" />
+</div>
+
+<div class="input-group">
+	<label for="place">PLZ / Ort:</label>
+	<input name="place" type="text" ng-model="ctrl.model.place" />
+</div>
+
+<div class="input-group">
+	<label for="phone">Telefon:</label>
+	<input name="phone" type="text" ng-model="ctrl.model.phone" />
+</div>
+
+<div class="input-group">
 	<label for="facebook">Facebook:</label>
 	<input name="facebook" type="text" ng-model="ctrl.model.facebook" />
 </div>

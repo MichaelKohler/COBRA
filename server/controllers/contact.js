@@ -24,7 +24,11 @@
       twitter: req.body.twitter,
       xing: req.body.xing,
       linkedin: req.body.linkedin,
-      email: req.body.email
+      email: req.body.email,
+      name: req.body.name,
+      address: req.body.address,
+      place: req.body.place,
+      phone: req.body.phone
     });
     req.db.collection('contact', function (error, collection) {
       collection.update({ id: 1 }, newContact, { upsert: true }, function (err, status) {
