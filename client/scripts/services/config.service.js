@@ -13,9 +13,11 @@
         var service = {
             getConfigUrl: '/config',
             saveConfigUrl: '/config/update',
+            uploadImageUrl: '/uploadImage',
 
             saveConfig: saveConfig,
-            getConfig: getConfig
+            getConfig: getConfig,
+            uploadImage: uploadImage
         };
         return service;
 
@@ -43,6 +45,24 @@
                 transformRequest: RequestHelper.transformRequest,
                 data: model,
                 headers: { 'Content-Type': 'application/x-www-form-urlencoded' }
+            }).success(function(data) {
+                q.resolve(data);
+            }).error(function(data, status) {
+                q.reject(data, status);
+            });
+
+            return q.promise;
+        }
+
+        function uploadImage(imageData) {
+            var q = $q.defer();
+            console.log(imageData);
+
+            $http({
+                method: 'POST',
+                url: config.apiUrl + service.uploadImageUrl,
+                transformRequest: RequestHelper.transformRequest,
+                data: imageData
             }).success(function(data) {
                 q.resolve(data);
             }).error(function(data, status) {

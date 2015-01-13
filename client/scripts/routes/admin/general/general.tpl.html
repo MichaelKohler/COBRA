@@ -30,7 +30,7 @@
 
 <div class="input-group">
 	<label for="logo">Logo:</label>
-	<input name="logo" type="text" ng-model="ctrl.model.logo" />
+	<input id="logoInput" name="logo" type="file" ng-model="ctrl.model.logo" ng-change="angular.element(this).scope().setElement(this)" />
 </div>
 
-<button class="btn btn-form" ng-click="ctrl.saveConfig(ctrl.model)">SPEICHERN</button>
+<button class="btn btn-form" ng-click="ctrl.saveConfig()">SPEICHERN</button>
