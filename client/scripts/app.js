@@ -29,43 +29,43 @@ angular
   })
   .state('login', {
     url: '/login',
-    templateUrl: 'scripts/routes/login/login.tpl.html',
+    templateUrl: 'scripts/routes/admin/login.tpl.html',
     controller: 'LoginCtrl',
     controllerAs: 'ctrl'
   })
   .state('admin.general', {
     url: '/general',
-    templateUrl: 'scripts/routes/admin/general/general.tpl.html',
+    templateUrl: 'scripts/routes/admin/general.tpl.html',
     controller: 'AdminGeneralCtrl',
     controllerAs: 'ctrl'
   })
   .state('admin.contact', {
     url: '/contact',
-    templateUrl: 'scripts/routes/admin/contact/contact.tpl.html',
+    templateUrl: 'scripts/routes/admin/contact.tpl.html',
     controller: 'AdminContactCtrl',
     controllerAs: 'ctrl'
   })
   .state('admin.content', {
     url: '/content',
-    templateUrl: 'scripts/routes/admin/content/content.tpl.html',
+    templateUrl: 'scripts/routes/admin/content.tpl.html',
     controller: 'AdminContentCtrl',
     controllerAs: 'ctrl'
   })
   .state('admin.posts', {
     url: '/posts',
-    templateUrl: 'scripts/routes/admin/blog/blog.tpl.html',
+    templateUrl: 'scripts/routes/admin/blog.tpl.html',
     controller: 'AdminBlogCtrl',
     controllerAs: 'ctrl'
   })
   .state('admin.post', {
     url: '/post/:blogID',
-    templateUrl: 'scripts/routes/admin/blog/blogpost.tpl.html',
+    templateUrl: 'scripts/routes/admin/blogpost.tpl.html',
     controller: 'AdminBlogpostCtrl',
     controllerAs: 'ctrl'
   })
   .state('admin.gallery', {
     url: '/gallery',
-    templateUrl: 'scripts/routes/admin/gallery/gallery.tpl.html',
+    templateUrl: 'scripts/routes/admin/gallery.tpl.html',
     controller: 'AdminGalleryCtrl',
     controllerAs: 'ctrl'
   });
