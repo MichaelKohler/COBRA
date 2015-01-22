@@ -40,7 +40,7 @@
             var q = $q.defer();
 
             $http({
-                method: 'POST',
+                method: 'PUT',
                 url: config.apiUrl + service.saveConfigUrl,
                 transformRequest: RequestHelper.transformRequest,
                 data: model,
