@@ -1,4 +1,4 @@
-<div id="kontakt">
+<div id="sidebar">
   <img ng-src="{{appctrl.picture}}" alt="Foto" />
   <h2>{{ctrl.contacts.name}}</h2><p>{{ctrl.contacts.address}}<br />{{ctrl.contacts.place}}<br />{{ctrl.contacts.phone}}</p>
   <ul id="kontaktliste">
@@ -8,6 +8,12 @@
     <li ng-show="ctrl.contacts.linkedin != ''"><a href="http://linkedin.com/{{ctrl.contacts.linkedin}}"><button class="btn"><i class="fa fa-linkedin"></i> LinkedIn</button></a></li>
     <li ng-show="ctrl.contacts.email != ''"><a href="mailto:{{ctrl.contacts.email}}"><button class="btn"><i class="fa fa-envelope-o"></i> eMail</button></a></li>
   </ul>
+
+  <div id="menu">
+    <div ui-sref="blog" class="nav-item" ng-show="ctrl.hasPosts">
+      <a ui-sref="blog">Blog</a>
+    </div>
+  </div>
 </div>
 
 <div id="text" ng-bind-html="ctrl.content | markdown"></div>

@@ -15,6 +15,12 @@ angular
     controller: 'HomeCtrl',
     controllerAs: 'ctrl'
   })
+  .state('blog', {
+    url: '/blog',
+    templateUrl: 'scripts/routes/home/blog.tpl.html',
+    controller: 'HomeBlogCtrl',
+    controllerAs: 'ctrl'
+  })
   .state('admin', {
     url: '/admin',
     templateUrl: 'scripts/routes/admin/admin.tpl.html',

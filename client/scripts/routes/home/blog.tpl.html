@@ -1,0 +1,10 @@
+<section id="blog">
+	<div class="blogpost-container" ng-repeat="blogpost in ctrl.blogposts">
+		<div class="blogpost">
+			<h1>{{blogpost.title}}</h1>
+			<small>Erstellt am: {{blogpost.date | date:'dd.MM.yyyy HH:mm'}}</small>
+			<div class="blogpost-content" ng-bind-html="blogpost.content | markdown"></div>
+		</div>
+		<hr />
+	</div>
+</section>
