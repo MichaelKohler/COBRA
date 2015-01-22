@@ -55,7 +55,7 @@
   var user = require('./controllers/user');
   app.post('/login', user.login);
   app.post('/session', user.session);
-  app.get('/logout', user.logout);
+  app.get('/logout', requiresLogin, user.logout);
 
   var config = require('./controllers/config');
   app.get('/config', config.getConfig);
