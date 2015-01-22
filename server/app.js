@@ -57,7 +57,7 @@
   var user = require('./controllers/user');
   app.post('/login', user.login);
   app.post('/session', user.session);
-  app.get('/logout', user.logout);
+  app.get('/logout', requiresLogin, user.logout);
 
   var config = require('./controllers/config');
   app.get('/config', config.getConfig);
@@ -74,9 +74,8 @@
   var blog = require('./controllers/blog');
   app.get('/blogposts', blog.getAllBlogposts);
   app.get('/blogpost/:blogID', blog.getBlogpostById);
-  app.post('/blogpost/create', requiresLogin, blog.createBlogpost);
-  app.post('/blogpost/:blogID/update', requiresLogin, blog.updateBlogpostById);
-  app.delete('/blogpost/:blogID/delete', requiresLogin, blog.deleteBlogpostById);
+  app.post('/blogpost/:blogID', requiresLogin, blog.saveBlogpost);
+  app.delete('/blogpost/:blogID', requiresLogin, blog.deleteBlogpostById);
 
 
   var server = app.listen(infos.config.server.port, function () {

@@ -6,9 +6,9 @@
         .module('app')
         .controller('AppCtrl', AppCtrl);
 
-    AppCtrl.$inject = ['ConfigService'];
+    AppCtrl.$inject = ['ConfigService', '$location'];
 
-    function AppCtrl(ConfigService) {
+    function AppCtrl(ConfigService, $location) {
         var appctrl = this;
         ConfigService.getConfig().then(function (data) {
             appctrl.title = data.title;
@@ -18,5 +18,8 @@
             appctrl.color = data.color;
             appctrl.linkColor = data.linkColor;
         });
+        appctrl.goHome = function() {
+            $location.path('/home');
+        };
     }   
 })();

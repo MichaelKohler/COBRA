@@ -1,0 +1,16 @@
+<h2>Blogpost</h2>
+
+<div class="error-message" ng-show="ctrl.showErrorMessage"><span>{{ctrl.errorMessage}}</span></div>
+
+<div class="input-group">
+	<input name="id" type="hidden" ng-model="ctrl.model.id" />
+</div>
+
+<div class="input-group">
+	<label for="title">Titel:</label>
+	<input name="title" type="text" ng-model="ctrl.model.title" />
+</div>
+
+<textarea class="big-textarea" name="text" ng-model="ctrl.model.content"></textarea>
+
+<button class="btn btn-form" ng-click="ctrl.saveBlogpost()">SPEICHERN</button>

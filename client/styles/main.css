@@ -26,7 +26,7 @@ a {
 	padding: 2em 1em 0em 1em;
 }
 
-#kontakt {
+#sidebar {
 	float: left;
 	min-height: 100%;
 	width: 18%;
@@ -38,18 +38,18 @@ a {
 	list-style-type: none;
 }
 
-#kontakt img {
+#sidebar img {
 	border-radius: 1px;
 	width: 15vw;
 }
 
-#kontakt h2 {
+#sidebar h2 {
 	font-size: 1em;
 	color: #000;
 	margin-top: 1em;
 }
 
-#kontakt a {
+#sidebar a {
 	color: #000;
 }
 
@@ -253,6 +253,32 @@ a {
 	margin-top: 0.6em;
 }
 
+#menu {
+	margin-top: 2em;
+}
+
+#blog {
+	margin-bottom: 3em;
+}
+
+.blogpost {
+	padding-top: 1.5em;
+	padding-bottom: 1.5em;
+	width: 100%;
+}
+
+.blogpost h1 {
+	text-align: center;
+}
+
+.blogpost small {
+	font-size: 0.7em;
+}
+
+.blogpost-content {
+	margin-top: 1em;
+}
+
 @media all and (max-width: 700px) {
   #text {
   	margin-top: 2em;
@@ -260,13 +286,13 @@ a {
     float: none;
   }
 
-  #kontakt {
+  #sidebar {
     float: none;
     width: 100%;
     text-align: center;
   }
 
-  #kontakt img {
+  #sidebar img {
 	width: 50%;
   }
 

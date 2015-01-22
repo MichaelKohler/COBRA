@@ -20,7 +20,7 @@
         function login() {
             AuthService.getAuth(model).then(function (data) {
                 if (data.success) {
-                    $location.path('/admin');
+                    $location.path('/admin/general');
                 }
                 else {
                     ctrl.showErrorMessage = true;

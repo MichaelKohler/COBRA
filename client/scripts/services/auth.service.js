@@ -47,7 +47,6 @@
                 },
                 headers: { 'Content-Type': 'application/x-www-form-urlencoded' }
             }).success(function(data) {
-                console.log(data);
                 q.resolve(data);
             }).error(function(data, status) {
                 q.reject(data, status);
