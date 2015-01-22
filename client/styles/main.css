@@ -279,6 +279,33 @@ a {
 	margin-top: 1em;
 }
 
+hr {
+	margin-top: 0.5em;
+	margin-bottom: 0.5em;
+}
+
+table {
+	margin-top: 1.5em;
+	margin-bottom: 2em;
+}
+
+tr {
+	border-bottom: 1px solid #ccc;
+}
+
+tr:last-child {
+	border-bottom: none;
+}
+
+td:nth-child(1) {
+	width: 50%;
+}
+
+td {
+	padding-top: 0.5em;
+	padding-bottom: 0.5em;
+}
+
 @media all and (max-width: 700px) {
   #text {
   	margin-top: 2em;
