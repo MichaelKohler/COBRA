@@ -18,7 +18,9 @@
     }
   });
 
-  app.use(bodyParser.urlencoded({ extended: false }));
+  
+  app.use(bodyParser.json({limit: '5mb'}));
+  app.use(bodyParser.urlencoded({limit: '5mb', extended: false }));
   app.use(session({
     secret: 'keyboard cat',
     resave: false,
@@ -59,7 +61,7 @@
 
   var config = require('./controllers/config');
   app.get('/config', config.getConfig);
-  app.post('/config/update', requiresLogin, config.updateConfig);
+  app.put('/config/update', requiresLogin, config.updateConfig);
 
   var contact = require('./controllers/contact');
   app.get('/contact', contact.getContact);

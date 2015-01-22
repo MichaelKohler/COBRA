@@ -8,7 +8,7 @@
 
 	<div class="input-group">
 		<label for="password">Passwort:</label>
-		<input name="password" type="password" ng-model="ctrl.model.password" />
+		<input name="password" ng-keyup="$event.keyCode == 13 ? ctrl.login() : null" type="password" ng-model="ctrl.model.password" />
 	</div>
 
 	<div class="error-message" ng-show="ctrl.showErrorMessage"><span>{{ctrl.errorMessage}}</span></div>
