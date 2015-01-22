@@ -3,9 +3,10 @@
 <div class="error-message" ng-show="ctrl.showErrorMessage"><span>{{ctrl.errorMessage}}</span></div>
 <div class="success-message" ng-show="ctrl.showSuccessMessage"><span>{{ctrl.successMessage}}</span></div>
 
-<textarea class="big-textarea" name="text" ng-model="ctrl.model.content"></textarea>
-
-<button class="btn btn-form" ng-click="ctrl.saveContent()">SPEICHERN</button>
+<form ng-submit="ctrl.saveContent()">
+    <textarea class="big-textarea" name="text" ng-model="ctrl.model.content"></textarea>
+    <button class="btn btn-form" type="submit">SPEICHERN</button>
+</form>
 
 <hr />
 

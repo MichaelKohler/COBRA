@@ -3,49 +3,51 @@
 <div class="error-message" ng-show="ctrl.showErrorMessage"><span>{{ctrl.errorMessage}}</span></div>
 <div class="success-message" ng-show="ctrl.showSuccessMessage"><span>{{ctrl.successMessage}}</span></div>
 
-<div class="input-group">
-	<label for="name">Name:</label>
-	<input name="name" type="text" ng-model="ctrl.model.name" />
-</div>
+<form ng-submit="ctrl.saveContacts()">
+	<div class="input-group">
+		<label for="name">Name:</label>
+		<input name="name" type="text" ng-model="ctrl.model.name" />
+	</div>
 
-<div class="input-group">
-	<label for="address">Adresse:</label>
-	<input name="address" type="text" ng-model="ctrl.model.address" />
-</div>
+	<div class="input-group">
+		<label for="address">Adresse:</label>
+		<input name="address" type="text" ng-model="ctrl.model.address" />
+	</div>
 
-<div class="input-group">
-	<label for="place">PLZ / Ort:</label>
-	<input name="place" type="text" ng-model="ctrl.model.place" />
-</div>
+	<div class="input-group">
+		<label for="place">PLZ / Ort:</label>
+		<input name="place" type="text" ng-model="ctrl.model.place" />
+	</div>
 
-<div class="input-group">
-	<label for="phone">Telefon:</label>
-	<input name="phone" type="text" ng-model="ctrl.model.phone" />
-</div>
+	<div class="input-group">
+		<label for="phone">Telefon:</label>
+		<input name="phone" type="text" ng-model="ctrl.model.phone" />
+	</div>
 
-<div class="input-group">
-	<label for="facebook">Facebook:</label>
-	<input name="facebook" type="text" ng-model="ctrl.model.facebook" />
-</div>
+	<div class="input-group">
+		<label for="facebook">Facebook:</label>
+		<input name="facebook" type="text" ng-model="ctrl.model.facebook" />
+	</div>
 
-<div class="input-group">
-	<label for="twitter">Twitter:</label>
-	<input name="Twitter" type="text" ng-model="ctrl.model.twitter" />
-</div>
+	<div class="input-group">
+		<label for="twitter">Twitter:</label>
+		<input name="Twitter" type="text" ng-model="ctrl.model.twitter" />
+	</div>
 
-<div class="input-group">
-	<label for="xing">XING:</label>
-	<input name="xing" type="text" ng-model="ctrl.model.xing" />
-</div>
+	<div class="input-group">
+		<label for="xing">XING:</label>
+		<input name="xing" type="text" ng-model="ctrl.model.xing" />
+	</div>
 
-<div class="input-group">
-	<label for="linkedin">LinkedIn:</label>
-	<input name="linkedin" type="text" ng-model="ctrl.model.linkedin" />
-</div>
+	<div class="input-group">
+		<label for="linkedin">LinkedIn:</label>
+		<input name="linkedin" type="text" ng-model="ctrl.model.linkedin" />
+	</div>
 
-<div class="input-group">
-	<label for="email">eMail:</label>
-	<input name="email" type="text" ng-model="ctrl.model.email" />
-</div>
+	<div class="input-group">
+		<label for="email">eMail:</label>
+		<input name="email" type="text" ng-model="ctrl.model.email" />
+	</div>
 
-<button class="btn btn-form" ng-click="ctrl.saveContacts()">SPEICHERN</button>
+	<button class="btn btn-form" type="submit">SPEICHERN</button>
+</form>

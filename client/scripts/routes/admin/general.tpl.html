@@ -3,34 +3,36 @@
 <div class="error-message" ng-show="ctrl.showErrorMessage"><span>{{ctrl.errorMessage}}</span></div>
 <div class="success-message" ng-show="ctrl.showSuccessMessage"><span>{{ctrl.successMessage}}</span></div>
 
-<div class="input-group">
-	<label for="title">Titel:</label>
-	<input name="title" type="text" ng-model="ctrl.model.title" />
-</div>
+<form ng-submit="ctrl.saveConfig()">
+	<div class="input-group">
+		<label for="title">Titel:</label>
+		<input name="title" type="text" ng-model="ctrl.model.title" />
+	</div>
 
-<div class="input-group">
-	<label for="name">Name:</label>
-	<input name="name" type="text" ng-model="ctrl.model.name" />
-</div>
+	<div class="input-group">
+		<label for="name">Name:</label>
+		<input name="name" type="text" ng-model="ctrl.model.name" />
+	</div>
 
-<div class="input-group">
-	<label for="url">URL:</label>
-	<input name="url" type="text" ng-model="ctrl.model.url" />
-</div>
+	<div class="input-group">
+		<label for="url">URL:</label>
+		<input name="url" type="text" ng-model="ctrl.model.url" />
+	</div>
 
-<div class="input-group">
-	<label for="color">Farbe:</label>
-	<input name="color" type="color" ng-model="ctrl.model.color" />
-</div>
+	<div class="input-group">
+		<label for="color">Farbe:</label>
+		<input name="color" type="color" ng-model="ctrl.model.color" />
+	</div>
 
-<div class="input-group">
-	<label for="linkcolor">Linkfarbe:</label>
-	<input name="linkcolor" type="color" ng-model="ctrl.model.linkColor" />
-</div>
+	<div class="input-group">
+		<label for="linkcolor">Linkfarbe:</label>
+		<input name="linkcolor" type="color" ng-model="ctrl.model.linkColor" />
+	</div>
 
-<div class="input-group">
-	<label for="logo">Logo:</label>
-	<input id="logoInput" name="logo" type="file" ng-model="ctrl.model.logo" ng-change="angular.element(this).scope().setElement(this)" />
-</div>
+	<div class="input-group">
+		<label for="logo">Logo:</label>
+		<input id="logoInput" name="logo" type="file" ng-model="ctrl.model.logo" ng-change="angular.element(this).scope().setElement(this)" />
+	</div>
 
-<button class="btn btn-form" ng-click="ctrl.saveConfig()">SPEICHERN</button>
+	<button type="submit" class="btn btn-form">SPEICHERN</button>
+</form>
