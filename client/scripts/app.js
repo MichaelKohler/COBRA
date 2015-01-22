@@ -51,16 +51,10 @@ angular
     controller: 'AdminBlogCtrl',
     controllerAs: 'ctrl'
   })
-  .state('admin.posts.new', {
-    url: '/new',
-    templateUrl: 'scripts/routes/admin/blog/blog.new.tpl.html',
-    controller: 'AdminBlogNewCtrl',
-    controllerAs: 'ctrl'
-  })
-  .state('admin.posts.edit', {
-    url: '/edit/:blogID',
-    templateUrl: 'scripts/routes/admin/blog/blog.edit.tpl.html',
-    controller: 'AdminBlogEditCtrl',
+  .state('admin.post', {
+    url: '/post/:blogID',
+    templateUrl: 'scripts/routes/admin/blog/blogpost.tpl.html',
+    controller: 'AdminBlogpostCtrl',
     controllerAs: 'ctrl'
   })
   .state('admin.gallery', {

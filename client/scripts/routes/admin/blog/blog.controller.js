@@ -6,24 +6,30 @@
         .module('app')
         .controller('AdminBlogCtrl', AdminBlogCtrl);
 
-    AdminBlogCtrl.$inject = [];
+    AdminBlogCtrl.$inject = ['BlogService'];
 
-    function AdminBlogCtrl() {
+    function AdminBlogCtrl(BlogService) {
         var ctrl = this;
 
-        var blogposts = [
-            { id: 1, date: "6.12.2014", title: "Foo", content: "That is Foo", slug: "YEAH!" },
-            { id: 2, date: "1.12.2014", title: "Bar", content: "That is Bar", slug: "YES?!" },
-            { id: 3, date: "1.1.2014", title: "Baz", content: "That is Baz", slug: "HELL NO!" }
-        ];
+        BlogService.getBlogposts().then(function (data) {
+            ctrl.blogposts = data;
+        }, function (error) {
+            ctrl.showErrorMessage = true;
+            ctrl.errorMessage = "Die Blogposts konnten nicht geladen werden.";
+        });
 
-        function removePost(blogpost) {
-            console.log('delete blog post');
+        function deletePost(id) {
+            BlogService.deleteBlogpost(id).then(function() {
+                ctrl.showSuccessMessage = true;
+                ctrl.successMessage = "Post wurde gelöscht.";
+            }, function (error) {
+                ctrl.showErrorMessage = true;
+                ctrl.errorMessage = "Der Post konnte nicht gelöscht werden.";
+            });
         }
         
         angular.extend(ctrl, {
-            blogposts: blogposts,
-            removePost: removePost
+            deletePost: deletePost
         });
     }   
 })();

@@ -1,16 +1,18 @@
 <h2>Blogposts</h2>
 
-<button class="btn btn-general" ui-sref="admin.posts.new">Neuer Blogpost</button>
+<button class="btn btn-general" ui-sref="admin.post({blogID: ctrl.blogposts.length + 1 })">Neuer Blogpost</button>
+
+<div class="error-message" ng-show="ctrl.showErrorMessage"><span>{{ctrl.errorMessage}}</span></div>
+<div class="success-message" ng-show="ctrl.showSuccessMessage"><span>{{ctrl.successMessage}}</span></div>
 
 <div ng-repeat="blogpost in ctrl.blogposts" class="blog-item">
 	<div class="blogpost-title">
 	    <div>{{blogpost.id}}: {{blogpost.title}}</div>
-	    <div class="blogpost-date smaller" class="smaller">{{blogpost.date}}</div>
-	    <div class="blogpost-slug smaller">{{blogpost.slug}}</div>
+	    <div class="blogpost-date smaller" class="smaller">{{blogpost.date | date:'dd.MM.yyyy HH:mm'}}</div>
 	</div>
 	<div class="blogpost-actions">
-		<button class="btn" ui-sref="admin.posts.edit({blogID: {{blogpost.id}} })">Editieren</button>
-		<button class="btn btn-red" ng-click="ctrl.removePost(blogpost)">Löschen</button>
+		<button class="btn" ui-sref="admin.post({blogID: blogpost.id })">Editieren</button>
+		<button class="btn btn-red" ng-click="ctrl.deletePost(blogpost.id)">Löschen</button>
 	</div>
 	<div class="clearfix"></div>
 </div>
