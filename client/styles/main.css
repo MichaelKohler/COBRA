@@ -330,4 +330,18 @@ td {
   #title .fa {
   	display: none;
   }
+
+  #admin-nav {
+	  display: inline;
+	  float: none;
+  }
+
+  #admin-content {
+	  width: 100%;
+  }
+
+  .nav-item {
+	  padding-top: 0.5em;
+	  padding-bottom: 0.5em;
+  }
 }
