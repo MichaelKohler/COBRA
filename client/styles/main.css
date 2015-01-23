@@ -258,6 +258,10 @@ a {
 	margin-bottom: 2em;
 }
 
+#backbutton-container {
+	width: 25%;
+}
+
 #blog {
 	margin-bottom: 3em;
 }
@@ -266,6 +270,11 @@ a {
 	padding-top: 1.5em;
 	padding-bottom: 1.5em;
 	width: 100%;
+	border-bottom: 1px solid #000;
+}
+
+.blogpost:last-child {
+	border-bottom: none;
 }
 
 .blogpost h1 {
