@@ -39,8 +39,8 @@ a {
 }
 
 #sidebar img {
-	border-radius: 1px;
-	width: 15vw;
+	border-radius: 20px;
+	width: 80%;
 }
 
 #sidebar h2 {
@@ -58,7 +58,7 @@ a {
 	width: calc(80% - 1px);
 	border-left: 1px solid #ccc;
 	border-top: 1px solid #ccc;
-	border-radius: 50px 0 0 0;
+	border-radius: 20px 0 0 0;
 	padding-top: 1em;
 	padding-left: 2%;
 	margin-bottom: 2em;
