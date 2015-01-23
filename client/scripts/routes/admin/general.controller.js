@@ -18,19 +18,24 @@
         	var reader  = new FileReader();
         	reader.onloadend = function () {
         		ctrl.model.logo = reader.result;
+        		saveConfigNow()
         	}
         	if (ctrl.logoFile)
         		reader.readAsDataURL(ctrl.logoFile);
-        	else
+        	else {
         		ctrl.model.logo = "";
+        		saveConfigNow();
+        	}
         	
-            ConfigService.saveConfig(ctrl.model).then(function () {
-                ctrl.showSuccessMessage = true;
-                ctrl.successMessage = "Konfiguration gespeichert";
-            }, function (error) {
-                ctrl.showErrorMessage = true;
-                ctrl.errorMessage = "Die Konfiguration konnte nicht gespeichert werden.";
-            });
+        	function saveConfigNow() {
+        		ConfigService.saveConfig(ctrl.model).then(function () {
+                    ctrl.showSuccessMessage = true;
+                    ctrl.successMessage = "Konfiguration gespeichert";
+                }, function (error) {
+                    ctrl.showErrorMessage = true;
+                    ctrl.errorMessage = "Die Konfiguration konnte nicht gespeichert werden.";
+                });
+        	}
 
         }
 
