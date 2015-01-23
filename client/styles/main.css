@@ -316,6 +316,14 @@ td {
 	padding-bottom: 0.5em;
 }
 
+.gallery-image-container {
+	margin-top: 2em;
+}
+
+.gallery-image-container img {
+	width: 60vw;
+}
+
 @media all and (max-width: 700px) {
   #text {
   	margin-top: 2em;

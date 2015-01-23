@@ -21,6 +21,12 @@ angular
     controller: 'HomeBlogCtrl',
     controllerAs: 'ctrl'
   })
+  .state('gallery', {
+    url: '/gallery',
+    templateUrl: 'scripts/routes/home/gallery.tpl.html',
+    controller: 'HomeGalleryCtrl',
+    controllerAs: 'ctrl'
+  })
   .state('admin', {
     url: '/admin',
     templateUrl: 'scripts/routes/admin/admin.tpl.html',

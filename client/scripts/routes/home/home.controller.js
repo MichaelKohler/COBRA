@@ -5,9 +5,9 @@
         .module('app')
         .controller('HomeCtrl', HomeCtrl);
 
-    HomeCtrl.$inject = ['ContactsService', 'ContentService', 'BlogService'];
+    HomeCtrl.$inject = ['ContactsService', 'ContentService', 'BlogService', 'GalleryService'];
 
-    function HomeCtrl(ContactsService, ContentService, BlogService) {
+    function HomeCtrl(ContactsService, ContentService, BlogService, GalleryService) {
         var ctrl = this;
         ContactsService.getContacts().then(function (data) {
             ctrl.contacts = data;
@@ -21,6 +21,12 @@
             if (data.length > 0) {
                 ctrl.hasPosts = true;
             }
+        });
+        ctrl.hasPictures = false;
+        GalleryService.getPictures().then(function (data) {
+           if (data.length > 0) {
+               ctrl.hasPictures = true;
+           }
         });
     }   
 })();

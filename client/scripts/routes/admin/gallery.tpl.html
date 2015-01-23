@@ -1,1 +1,16 @@
-Gallery..
+<h1>Fotos</h1>
+<form ng-submit="ctrl.uploadPictures()">
+    <div class="input-group">
+        <label for="selection">Bilder auswählen:</label>
+        <input id="selection" name="pictures" type="file" multiple onchange="angular.element(this).scope().setFile(this)" />
+    </div>
+    <button type="submit" class="btn btn-form">HOCHLADEN</button>
+</form>
+
+<div class="error-message" ng-show="ctrl.showErrorMessage"><span>{{ctrl.errorMessage}}</span></div>
+
+<div class="gallery-container">
+    <div class="gallery-image-container" ng-repeat="image in ctrl.uploads">
+        <img ng-src="{{image.imageURL}}" alt="no description available" />
+    </div>
+</div>

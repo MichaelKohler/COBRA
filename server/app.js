@@ -77,6 +77,10 @@
   app.post('/blogpost/:blogID', requiresLogin, blog.saveBlogpost);
   app.delete('/blogpost/:blogID', requiresLogin, blog.deleteBlogpostById);
 
+  var gallery = require('./controllers/gallery');
+  app.get('/pictures', gallery.getAllPictures);
+  app.post('/picture', gallery.savePicture);
+
 
   var server = app.listen(infos.config.server.port, function () {
     console.log('Server for ' + infos.config.mandant.name + ' started on Port ' + server.address().port);

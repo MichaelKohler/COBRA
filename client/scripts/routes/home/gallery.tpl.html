@@ -1,0 +1,11 @@
+<section id="pictures">
+	<h1>Fotos</h1>
+	<div id="backbutton-container">
+		<button class="btn btn-general" ng-click="appctrl.goHome()">Zurück</button>
+	</div>
+	<div class="gallery-container">
+		<div class="gallery-image-container" ng-repeat="image in ctrl.images">
+			<img ng-src="{{image.imageURL}}" alt="no description available" />
+		</div>
+	</div>
+</section>
