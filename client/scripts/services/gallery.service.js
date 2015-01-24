@@ -36,10 +36,7 @@
             return q.promise;
         }
 
-        function uploadPicture(image) {
-            var imageObj = {
-                imageURL: image
-            };
+        function uploadPicture(imageObj) {
             var q = $q.defer();
 
             $http({
