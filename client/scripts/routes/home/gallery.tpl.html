@@ -4,8 +4,8 @@
 		<button class="btn btn-general" ng-click="appctrl.goHome()">Zurück</button>
 	</div>
 	<div class="gallery-container">
-		<div class="gallery-image-container" ng-repeat="image in ctrl.images">
+		<span class="gallery-image-container" ng-repeat="image in ctrl.images">
 			<img ng-src="{{image.imageURL}}" alt="no description available" />
-		</div>
+		</span>
 	</div>
 </section>

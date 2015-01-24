@@ -321,7 +321,7 @@ td {
 }
 
 .gallery-image-container img {
-	width: 60vw;
+	width: 30vw;
 }
 
 @media all and (max-width: 700px) {

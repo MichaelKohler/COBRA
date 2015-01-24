@@ -10,7 +10,7 @@
 <div class="error-message" ng-show="ctrl.showErrorMessage"><span>{{ctrl.errorMessage}}</span></div>
 
 <div class="gallery-container">
-    <div class="gallery-image-container" ng-repeat="image in ctrl.uploads">
+    <span class="gallery-image-container" ng-repeat="image in ctrl.uploads">
         <img ng-src="{{image.imageURL}}" alt="no description available" />
-    </div>
+    </span>
 </div>
