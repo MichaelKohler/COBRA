@@ -8,7 +8,7 @@
   	var success = false;
     req.db.collection('users', function (error, collection) {
       collection.find({ username: username }).toArray(function (error, user) {
-        if (!error && user[0] && user[0].password == password) {
+        if (!error && user[0] && user[0].password === password) {
           success = true;
           req.session.user = user[0];
         }

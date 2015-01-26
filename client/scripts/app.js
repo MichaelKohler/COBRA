@@ -1,10 +1,12 @@
+'use strict';
+
 angular
   .module('app', [
   'ui.router', 'markdown'
 ])
 
 .constant('config', {
-  'apiUrl': 'http://localhost:3001'
+  'apiUrl': 'http://localhost:3001/api'
 })
 
 .config(function($stateProvider, $urlRouterProvider) {

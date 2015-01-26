@@ -21,6 +21,7 @@
   
   app.use(bodyParser.json({limit: '5mb'}));
   app.use(bodyParser.urlencoded({limit: '5mb', extended: false }));
+  app.use('/', express.static('client'));
   app.use(session({
     secret: 'keyboard cat',
     resave: false,
@@ -42,47 +43,36 @@
     }
   };
 
-  var allowCrossDomain = function(req, res, next) {
-    res.header('Access-Control-Allow-Origin', 'http://' + infos.config.mandant.name + ':' + infos.config.mandant.port);
-    res.header('Access-Control-Allow-Methods', 'GET, PUT, POST, DELETE, OPTIONS');
-    res.header('Access-Control-Allow-Headers', 'Origin, X-Requested-With, Content-Type, Accept');
-    res.header('Access-Control-Allow-Credentials', true);
-    res.header('Access-Control-Max-Age', 1728000);
-    next();
-  };
-
-  app.use(allowCrossDomain);
-
   /** ROUTES **/
   var user = require('./controllers/user');
-  app.post('/login', user.login);
-  app.post('/session', user.session);
-  app.get('/logout', requiresLogin, user.logout);
+  app.post('/api/login', user.login);
+  app.post('/api/session', user.session);
+  app.get('/api/logout', requiresLogin, user.logout);
 
   var config = require('./controllers/config');
-  app.get('/config', config.getConfig);
-  app.put('/config/update', requiresLogin, config.updateConfig);
+  app.get('/api/config', config.getConfig);
+  app.put('/api/config/update', requiresLogin, config.updateConfig);
 
   var contact = require('./controllers/contact');
-  app.get('/contact', contact.getContact);
-  app.post('/contact/update', requiresLogin, contact.updateContact);
+  app.get('/api/contact', contact.getContact);
+  app.post('/api/contact/update', requiresLogin, contact.updateContact);
 
   var content = require('./controllers/content');
-  app.get('/content', content.getContent);
-  app.post('/content/update', requiresLogin, content.updateContent);
+  app.get('/api/content', content.getContent);
+  app.post('/api/content/update', requiresLogin, content.updateContent);
 
   var blog = require('./controllers/blog');
-  app.get('/blogposts', blog.getAllBlogposts);
-  app.get('/blogpost/:blogID', blog.getBlogpostById);
-  app.post('/blogpost/:blogID', requiresLogin, blog.saveBlogpost);
-  app.delete('/blogpost/:blogID', requiresLogin, blog.deleteBlogpostById);
+  app.get('/api/blogposts', blog.getAllBlogposts);
+  app.get('/api/blogpost/:blogID', blog.getBlogpostById);
+  app.post('/api/blogpost/:blogID', requiresLogin, blog.saveBlogpost);
+  app.delete('/api/blogpost/:blogID', requiresLogin, blog.deleteBlogpostById);
 
   var gallery = require('./controllers/gallery');
-  app.get('/pictures', gallery.getAllPictures);
-  app.post('/picture', gallery.savePicture);
+  app.get('/api/pictures', gallery.getAllPictures);
+  app.post('/api/picture', gallery.savePicture);
 
 
   var server = app.listen(infos.config.server.port, function () {
-    console.log('Server for ' + infos.config.mandant.name + ' started on Port ' + server.address().port);
+    console.log('Server started on Port ' + server.address().port);
   });
 }());

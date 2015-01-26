@@ -5,7 +5,6 @@
 
   exports.getAllBlogposts = function getAllBlogposts(req, res) {
     req.db.collection('blogposts', function (error, collection) {
-      var coll = collection;
       collection.find({}, {'sort':[['id', -1]]}).toArray(function (error, posts) {
         if (error) {
           res.status(500);
@@ -20,7 +19,6 @@
 
   exports.getBlogpostById = function getBlogpostById(req, res) {
     req.db.collection('blogposts', function (error, collection) {
-      var coll = collection;
       collection.findOne({ id: req.params.blogID }, function (error, post) {
         if (error) {
           res.status(500);
