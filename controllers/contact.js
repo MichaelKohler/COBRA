@@ -4,7 +4,6 @@
 
   exports.getContact = function getContact(req, res) {
     req.db.collection('contact', function (error, collection) {
-      var coll = collection;
       collection.find({ id: 1 }).toArray(function (error, contacts) {
         if (error) {
           res.status(500);

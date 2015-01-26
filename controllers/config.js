@@ -4,7 +4,6 @@
 
   exports.getConfig = function getConfig(req, res) {
     req.db.collection('config', function (error, collection) {
-      var coll = collection;
       collection.find({ id: 1 }).toArray(function (error, config) {
         if (error) {
           res.status(500);
@@ -38,5 +37,5 @@
         }
       });
     });
-  }
+  };
 }());
