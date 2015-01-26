@@ -159,14 +159,13 @@ a {
 }
 
 .form-container {
-	width: 50%;
+	width: 100%;
 }
 
 .input-group {
-	margin-top: 0.4em;
-	margin-bottom: 0.2em;
+	margin-top: 0.7em;
+	margin-bottom: 0.7em;
 	width: 100%;
-	display: inline-flex;
 }
 
 .input-group label {
@@ -175,7 +174,6 @@ a {
 
 .input-group input {
 	width: 100%;
-	margin-left: 1em;
 }
 
 .btn-form {
