@@ -4,11 +4,11 @@
   var express = require('express'),
       bodyParser = require('body-parser'),
       session = require('express-session'),
-      infos = require('./configuration'),
+      serverConfig = require('./configuration').config,
       app = express(),
       mongo = require('mongodb'),
       dbServer = new mongo.Server('localhost', 27017, { auto_reconnect: true, poolSize: 1 }),
-      db = new mongo.Db(infos.config.server.dbname, dbServer, { safe: true });
+      db = new mongo.Db(serverConfig.server.dbname, dbServer, { safe: true });
 
   db.open(function (err, db) {
     if (err) {
@@ -42,6 +42,14 @@
       res.send('NOPE!');
     }
   };
+  var documentsAllowed = function(req, res, next) {
+    if (serverConfig.premium.documents) {
+      next();
+    } else {
+      res.status(403);
+      res.send('NOPE!');
+    }
+  };
 
   /** ROUTES **/
   var user = require('./controllers/user');
@@ -71,8 +79,14 @@
   app.get('/api/pictures', gallery.getPictures);
   app.post('/api/picture', gallery.savePicture);
 
+  var documents = require('./controllers/documents');
+  app.get('/api/documents', documentsAllowed, documents.getAllDocuments);
+  app.get('/api/documents/enabled', documents.documentsEnabled);
+  app.get('/api/document/:docID', documentsAllowed, documents.getDocument);
+  app.post('/api/document', documentsAllowed, documents.saveDocument);
+  app.delete('/api/document/:docID', documentsAllowed, documents.deleteDocument);
 
-  var server = app.listen(infos.config.server.port, function () {
+  var server = app.listen(serverConfig.server.port, function () {
     console.log('Server started on Port ' + server.address().port);
   });
 }());

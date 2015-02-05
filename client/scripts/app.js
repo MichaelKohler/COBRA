@@ -76,6 +76,12 @@ angular
     templateUrl: 'scripts/routes/admin/gallery.tpl.html',
     controller: 'AdminGalleryCtrl',
     controllerAs: 'ctrl'
+  })
+  .state('admin.documents', {
+    url: '/documents',
+    templateUrl: 'scripts/routes/admin/documents.tpl.html',
+    controller: 'AdminDocumentsCtrl',
+    controllerAs: 'ctrl'
   });
 
   $urlRouterProvider.otherwise('home');

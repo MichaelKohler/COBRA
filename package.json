@@ -14,6 +14,7 @@
   },
   "scripts": {
     "start": "node app.js",
-    "lint": "node node_modules/gulp/bin/gulp.js jslint"
+    "lint": "node node_modules/gulp/bin/gulp.js jslint",
+    "debug": "node debug app.js"
   }
 }

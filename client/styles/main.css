@@ -120,6 +120,11 @@ a {
 	border-color: #800000;
 }
 
+.btn-small{
+	width: 20px;
+	height: 20px;
+}
+
 .btn-general {
 	width: 100%;
 	margin-bottom: 2em;
@@ -322,10 +327,48 @@ td {
 .gallery-image-container img {
 	width: 30vw;
 }
-
+.documents-container {
+	margin-top: 2em;
+	display: flex;
+	flex-flow: column nowrap;
+}
+.document-container {
+	flex: auto;
+	display: flex;
+	align-items: center;
+	flex-flow: row nowrap;
+	-webkit-animation: fadeIn 0.2s 1 ease-in;
+    -moz-animation: fadeIn 0.2s 1 ease-in;
+    -o-animation: fadeIn 0.2s 1 ease-in;
+    animation: fadeIn 0.2s 1 ease-in;
+}
+.document-container a {
+	flex: 10;
+}
+.document-container button {
+	flex: 1;
+	min-width: 30px;
+}
 .imgclicked {
 	z-index: 200;
 	min-width: 80vw;
+}
+
+@-webkit-keyframes fadeIn {
+    from { -webkit-transform: translate(0px, 100px); }
+    to { -webkit-transform: translate(0px, 0px); }
+}
+@-moz-keyframes fadeIn {
+    from { -moz-transform: translate(0px, 100px); }
+    to { -moz-transform: translate(0px, 0px); }
+}
+@-o-keyframes fadeIn {
+    from { -o-transform: translate(0px, 100px); }
+    to { -o-transform: translate(0px, 0px); }
+}
+@keyframes fadeIn {
+    from { transform: translate(0px, 100px); }
+    to { transform: translate(0px, 0px); }
 }
 
 @media all and (max-width: 700px) {

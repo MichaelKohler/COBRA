@@ -5,6 +5,9 @@
     server: {
         port: 3001,
         dbname: 'cobra'
+    },
+    premium: {
+        documents: true
     }
   }
 
