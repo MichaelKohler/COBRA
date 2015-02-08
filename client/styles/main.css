@@ -322,6 +322,11 @@ td {
 	width: 30vw;
 }
 
+.imgclicked {
+	z-index: 200;
+	min-width: 80vw;
+}
+
 @media all and (max-width: 700px) {
   #text {
   	margin-top: 2em;

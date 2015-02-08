@@ -5,7 +5,7 @@
 	</div>
 	<div class="gallery-container">
 		<span class="gallery-image-container" ng-repeat="image in ctrl.images">
-			<img ng-src="{{image.imageURL}}" alt="no description available" />
+			<img ng-src="{{image.imageURL}}" alt="no description available" onclick="this.classList.toggle('imgclicked');" />
 		</span>
 	</div>
 </section>
