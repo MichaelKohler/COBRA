@@ -285,6 +285,7 @@ a {
 
 .blogpost-content {
 	margin-top: 1em;
+	white-space: pre-wrap;
 }
 
 hr {
