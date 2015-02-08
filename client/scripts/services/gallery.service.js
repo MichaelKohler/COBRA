@@ -21,12 +21,12 @@
         };
         return service;
 
-        function getPictures() {
+        function getPictures(max, currentIndex) {
             var q = $q.defer();
 
             $http({
                 method: 'GET',
-                url: config.apiUrl + service.getPicturesUrl
+                url: config.apiUrl + service.getPicturesUrl + "?max=" + max + "&index=" + currentIndex
             }).success(function(data) {
                 q.resolve(data);
             }).error(function(data, status) {

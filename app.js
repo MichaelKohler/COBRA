@@ -68,7 +68,7 @@
   app.delete('/api/blogpost/:blogID', requiresLogin, blog.deleteBlogpostById);
 
   var gallery = require('./controllers/gallery');
-  app.get('/api/pictures', gallery.getAllPictures);
+  app.get('/api/pictures', gallery.getPictures);
   app.post('/api/picture', gallery.savePicture);
 
 

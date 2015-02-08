@@ -1,9 +1,11 @@
 (function () {
   'use strict';
 
-  exports.getAllPictures = function getAllPictures(req, res) {
+  exports.getPictures = function getPictures(req, res) {
+    var max = req.query.max;
+    var currentIndex = req.query.index;
     req.db.collection('gallery', function (error, collection) {
-      collection.find({}).toArray(function (error, images) {
+      collection.find({}, { skip: currentIndex, limit: max }).toArray(function (error, images) {
         if (error) {
           res.status(500);
           res.send(JSON.stringify(error));
