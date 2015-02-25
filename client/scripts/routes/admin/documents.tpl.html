@@ -1,0 +1,17 @@
+<h1>Dokumente</h1>
+<form ng-submit="ctrl.uploadDocuments()">
+    <div class="input-group">
+        <label for="selection">Dokumente auswählen:</label>
+        <input id="selection" name="documents" type="file" multiple onchange="angular.element(this).scope().setFiles(this)" />
+    </div>
+    <button type="submit" class="btn btn-form">HOCHLADEN</button>
+</form>
+
+<div class="error-message" ng-show="ctrl.showErrorMessage"><span>{{ctrl.errorMessage}}</span></div>
+
+<div class="documents-container">
+    <div class="document-container" ng-repeat="doc in ctrl.documents">
+        <a href="/api/document/{{doc._id}}" >{{doc.name}}</a>
+        <button class="btn btn-red btn-small" ng-click="ctrl.deleteDocument(doc._id)">x</button>
+    </div>
+</div>
