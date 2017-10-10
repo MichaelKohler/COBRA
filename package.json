@@ -3,18 +3,22 @@
   "version": "0.1.0",
   "author": "Michael Kohler <mkohler@picobudget.com>",
   "description": "",
-  "dependencies" : {
-    "express"             :  "4.10.*",
-    "body-parser"         :  "1.9.*",
-    "express-session"     :  "1.9.*",
-    "gulp"                :  "3.8.*",
-    "gulp-jslint"         :  "0.1.*",
-    "mongodb"             :  "1.4.*",
-    "js-sha256"           :  "0.1.*"
+  "dependencies": {
+    "express": "4.16.0",
+    "body-parser": "1.17.1",
+    "express-session": "1.15.6",
+    "gulp": "3.8.*",
+    "gulp-jslint": "1.0.3",
+    "mongodb": "1.4.*",
+    "js-sha256": "0.1.*",
+    "snyk": "^1.42.5"
   },
   "scripts": {
     "start": "node app.js",
     "lint": "node node_modules/gulp/bin/gulp.js jslint",
-    "debug": "node debug app.js"
-  }
+    "debug": "node debug app.js",
+    "snyk-protect": "snyk protect",
+    "prepublish": "npm run snyk-protect"
+  },
+  "snyk": true
 }
